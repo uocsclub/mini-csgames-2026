@@ -63,7 +63,7 @@ It turns out that you don't actually need $I$! Define it in terms of $S$ and $K$
 
 #v(100pt)
 
-=== 2.2 Compose
+=== 2.3 Compose
 
 Define the $B$ combinator, which follows the rule $B x y z = x (y z)$. In other words, it composes $x$ and $y$.
 
