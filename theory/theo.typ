@@ -55,11 +55,11 @@ As another example, consider the function $M x = x x$. It takes an argument and 
 
 One way to represent a boolean false is with a function that discards its first argument: $F x y = y$. Define this in terms of $S$, $K$, and $I$.
 
+#v(100pt)
+
 === 2.2 Idiot
 
 It turns out that you don't actually need $I$! Define it in terms of $S$ and $K$. ($I$ is sometimes known as the _idiot bird_.)
-
-#v(100pt)
 
 #v(100pt)
 
