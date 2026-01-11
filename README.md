@@ -12,15 +12,15 @@ Some challenges will be on paper and will require you to turn in the solutions i
 
 # Challenge overview
 
-- Theoretical 
+- Theoretical  
     Answer theoretical CS questions on paper
-- Digital design
+- Digital design  
     Complete some VHDL implementations according to specified constraints
-- Low level design
+- Low level design  
     Implement in C a solution to a given problem
-- Design
+- Design  
     Something to do with figma
-- Proofs
+- Proofs  
     Solve some proofs with the lean proof solver
 
 Detailed instructions for each challenge will be available in their corresponding folder
