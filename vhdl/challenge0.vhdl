@@ -18,9 +18,10 @@ entity challenge0 is
     );
 end entity challenge0;
 
+architecture rtl of challenge0 is
+
 -- Signals defined here
 
-architecture rtl of challenge0 is
 begin
     
 -- Circuit defined here
