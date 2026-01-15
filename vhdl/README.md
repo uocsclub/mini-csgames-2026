@@ -17,10 +17,25 @@ VHDL is very simple. I swear you can learn the basics in 20min.
 
 # Running the simulations
 
-You will need docker installed, or a working ghdl environment
+Open the `sim.vhdl` file and uncomment the simulation for your challenge.
+
+They are commented to avoid spamming your terminal with assertion violations.
+
+Next, you will need docker installed, or a working ghdl environment
 
 ## Docker
 
 Run the following command in the current working directory and you're good
 
 `docker run -it -v .:/data ghdl/ghdl:6.0.0-dev-gcc-ubuntu-24.04 bash ./data/_dockerbuild.sh`
+
+## Host
+
+Run the following shell file `./hostbuild.sh`
+
+Make sure it is executable and `ghdl` is in your PATH
+
+# Examining results
+
+A new file called `wave.vcd` will be in workspace, you can open it with a waveform viewer such as gtkwave or [https://surfer-project.org/](https://surfer-project.org/)
+
