@@ -1,0 +1,5 @@
+wave.vcd
+*.o
+*.cf
+ref_solution.txt
+sim
