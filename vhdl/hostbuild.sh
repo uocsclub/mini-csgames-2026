@@ -1,5 +1,5 @@
 #!/bin/bash
 
-ghdl -a *.vhdl
-ghdl -e sim 
-ghdl -r sim --stop-time=4us --vcd=wave.vcd
+ghdl -a --std=08 *.vhdl
+ghdl -e --std=08 sim 
+ghdl -r --std=08 sim --stop-time=4us --vcd=wave.vcd
