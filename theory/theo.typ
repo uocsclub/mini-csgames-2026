@@ -37,34 +37,43 @@ Is it possible for any inhabitant to say "You can't deduce if I'm a knight or a 
 
 == 2. SKI Combinator Calculus
 
-In this system, there are 3 functions: $S$, $K$, and $I$.
+In this system, there are 3 rules: $S$, $K$, and $I$.
 
-$I$ is the identity function: $I x = x$.
+$I$ is the identity combinator: the pattern $I x$ for any $x$ is replaced with $x$. \
+$K$ is constant combinator. The pattern $K x y$ for any $x$ and $y$ is replaced with $x$. \
+$S$ follows the rule $S x y z = x z (y z)$, for any $x$, $y$, and $z$.
+#footnote[
+	$S$'s rule may seem arbitrarily, but it encodes the very common pattern of calling a function with some input and the same input but modified. For example, a string if is a palindrome if it's equal to its reverse. Here, the function is equality, the string is the input, and the modified input is the reversed string.
+```python
+def eq(x, y): return x == y
+def reverse(s): return s[::-1]
+def S(x, y, z): return x(z, y(z))
+def palindrome(s): return S(eq, reverse, s)
 
-$K$ is the constant function. It takes two arguments and always returns the first: $K x y = x$.
+print(palindrome("racecar"))  # True
+print(palindrome("starling"))  # False
+print(palindrome(re.sub("\\W","","A man, a plan, a canal - Panama!").lower()))  # True
+```
+]
 
-$S$ follows the rule $S x y z = x z (y z)$.
+The leftmost pattern is always reduced, and expressions can be grouped with brackets. For example, $I K I S$ is the same as $(I K) I S$ because $I K$ is the leftmost pattern. We can reduce the $I K$ inside the brackets to $K$, leaving us with $K I S$. The, by $K$'s rule, this leaves us with $I$.
 
-Function application is denoted by juxtaposition and is left-associative (eg. $f x y$ means $(f(x))(y)$). If a function does not have enough arguments, it will simply not reduce further (eg. $S x y$ evaluates to $S x y$).
-
-For example, let's suppose we have a function _eq_ that returns true if its arguments are equal (like _eq_ $S S$), and false if they aren't (like _eq_ $S K$). Let's also suppose we have a function _rev_ that reverses a string. We could check if a string was a palindrome or not like so: _S eq rev_. If this was applied to a string: _S eq rev str_, the result would be _eq str (rev str)_ by $S$'s reduction rule, checking if _str_ is a palindrome. However, we actually don't have strings or booleans or _eq_ or _rev_ (all we have are the functions $S$, $K$, and $I$); this section is merely hypothetical to help explain $S$.
-
-As another example, consider the function $M x = x x$. It takes an argument and applies the argument to itself. One way to define it using $S$, $K$, and $I$ is like this: $M = S I I$. Then, $M x = S I I x = I x (I x) = I(x)(I(x))$. Now, we know that $I x = x$, so this reduces to $x(x)$, or simply $x x$, as intended.
+As another example, consider the combinator $M x = x x$, which replaces something with two copies of itself. One way to define it using $S$, $K$, and $I$ is like this: $M = S I I$. Then, $M x = S I I x = I x (I x) = x (I x) = x x$, as intended. This can no longer be reduced further, as $x$ is an arbitrary variable, and its reduction rule is unknown. Perhaps $x$ is $S$, perhaps it is $K$, perhaps it is something else entirely. Note that $x (I x)$ is _not_ the same as $x I x$. In fact, we can't reduce $x I x$ at all, because once again $x$ is a variable and we don't know what it does.
 
 === 2.1 False
 
 One way to represent a boolean false is with a function that discards its first argument: $F x y = y$. Define this in terms of $S$, $K$, and $I$.
 
-#v(100pt)
+#v(60pt)
 
 === 2.2 Idiot
 
 It turns out that you don't actually need $I$! Define it in terms of $S$ and $K$. ($I$ is sometimes known as the _idiot bird_.)
 
-#v(100pt)
+#v(60pt)
 
 === 2.3 Compose
 
 Define the $B$ combinator, which follows the rule $B x y z = x (y z)$. In other words, it composes $x$ and $y$.
 
-#v(100pt)
+#v(60pt)
