@@ -58,22 +58,29 @@ print(palindrome(re.sub("\\W","","A man, a plan, a canal - Panama!").lower()))  
 
 The leftmost pattern is always reduced, and expressions can be grouped with brackets. For example, $I K I S$ is the same as $(I K) I S$ because $I K$ is the leftmost pattern. We can reduce the $I K$ inside the brackets to $K$, leaving us with $K I S$. The, by $K$'s rule, this leaves us with $I$.
 
-As another example, consider the combinator $M x = x x$, which replaces something with two copies of itself. One way to define it using $S$, $K$, and $I$ is like this: $M = S I I$. Then, $M x = S I I x = I x (I x) = x (I x) = x x$, as intended. This can no longer be reduced further, as $x$ is an arbitrary variable, and its reduction rule is unknown. Perhaps $x$ is $S$, perhaps it is $K$, perhaps it is something else entirely. Note that $x (I x)$ is _not_ the same as $x I x$. In fact, we can't reduce $x I x$ at all, because once again $x$ is a variable and we don't know what it does.
+As another example, consider the combinator $M x = x x$, which replaces something with two copies of itself. One way to define it using $S$, $K$, and $I$ is like this: $M = S I I$. Then, $M x = S I I x = I x (I x) = x (I x) = x x$, as intended. This can no longer be reduced further, as $x$ is an arbitrary variable, and its reduction rule is unknown. Perhaps $x$ is $S$, perhaps it is $K$, perhaps it is something else entirely.
+
+Note that $x (I x)$ is _not_ the same as $x I x$. In fact, we can't reduce $x I x$ at all, because once again $x$ is a variable and we don't know what it does.
+
+More examples:
+- $K x (S z)$ reduces to $x$
+- $K (S x y z) I$ reduces to $x z (y z)$
+- $K S$ reduces to $K S$ (we don't have enough info to continue reduction, so we leave it)
 
 === 2.1 False
 
 One way to represent a boolean false is with a function that discards its first argument: $F x y = y$. Define this in terms of $S$, $K$, and $I$.
 
-#v(60pt)
+#v(40pt)
 
 === 2.2 Idiot
 
 It turns out that you don't actually need $I$! Define it in terms of $S$ and $K$. ($I$ is sometimes known as the _idiot bird_.)
 
-#v(60pt)
+#v(40pt)
 
 === 2.3 Compose
 
 Define the $B$ combinator, which follows the rule $B x y z = x (y z)$. In other words, it composes $x$ and $y$.
 
-#v(60pt)
+#v(40pt)
