@@ -6,7 +6,7 @@ use ieee.std_logic_1164.ALL;
 -- Odd parity sets the parity high if there are an odd number of 1s in the input data
 
 -- IMPORTANT
--- This challenge must be completed either behaviourally or stucturally
+-- This challenge can be completed either behaviourally or stucturally
 -- VHDL 2008 reduction operators are banned
 
 entity challenge2 is

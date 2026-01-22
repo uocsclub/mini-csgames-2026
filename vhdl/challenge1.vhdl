@@ -7,7 +7,7 @@ use ieee.std_logic_1164.ALL;
 -- See simulation if this is ambiguous
 
 -- IMPORTANT
--- This challenge must be completed either behaviourally or stucturally
+-- This challenge can be completed either behaviourally or stucturally
 
 entity challenge1 is
     port (
