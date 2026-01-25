@@ -39,3 +39,7 @@ Make sure it is executable and `ghdl` is in your PATH
 
 A new file called `wave.vcd` will be in workspace, you can open it with a waveform viewer such as gtkwave or [https://surfer-project.org/](https://surfer-project.org/)
 
+
+# French
+
+Just ask me, I'll explain it, I don't want to retype everything
