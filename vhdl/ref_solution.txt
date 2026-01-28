@@ -1,0 +1,59 @@
+-- Solution 0
+architecture rtl of challenge0 is
+    signal a : std_logic;
+    signal b : std_logic;
+    signal c : std_logic;
+    signal d : std_logic;
+    signal e : std_logic;
+    signal f : std_logic;
+    signal g : std_logic;
+    signal h : std_logic;
+begin
+
+    a <= input(6);
+    b <= input(5);
+    c <= input(4);
+    d <= input(3);
+    e <= input(2);
+    f <= input(1);
+    g <= input(0);
+
+    h <= (((a and b and not c) or (not d and a and b and (d and e and ((a and not d) or b) and (e or (not e and f))))) and not (a and b and not d)) or (c and f) or (not b and g);
+    output <= h;
+    
+end architecture rtl;
+
+-- Solution 1
+architecture rtl of challenge1 is
+begin
+
+    output <= 
+             (input0 AND AND (sel XNOR "00")) OR
+             (input1 AND AND (sel XNOR "01")) OR
+             (input2 AND AND (sel XNOR "10")) OR
+             (input3 AND AND (sel XNOR "11"));
+
+end architecture rtl;
+
+-- Solution 2
+
+architecture rtl of challenge2 is
+    signal int : std_logic_vector(BITS + 1 downto 0) := (others => '0');
+begin
+
+    s : for i in BITS downto 0 generate 
+        int(i) <= int(i+1) xor input(i);
+    end generate;
+    
+    output <= int(0);
+
+end architecture rtl;
+-- Solution 3
+
+Yeah, no
+Maybe later
+
+-- Solution 4
+
+Yeah, no
+Maybe later

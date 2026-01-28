@@ -1,5 +1,6 @@
 LIBRARY ieee;
 use ieee.std_logic_1164.ALL;
+use ieee.numeric_std.all;
 
 -- Challenge 4
 -- Output the result of nth iteration conways game of life 
@@ -12,19 +13,19 @@ use ieee.std_logic_1164.ALL;
 
 entity challenge4 is
     port (
-    -- iteration
-        n: in std_logic_vector(2 downto 0);
-    -- inputs
-        i0: in std_logic_vector(3 downto 0);
-        i1: in std_logic_vector(3 downto 0);
-        i2: in std_logic_vector(3 downto 0);
-        i3: in std_logic_vector(3 downto 0);
-    -- outputs
-        o0: out std_logic_vector(3 downto 0); 
-        o1: out std_logic_vector(3 downto 0);
-        o2: out std_logic_vector(3 downto 0);
-        o3: out std_logic_vector(3 downto 0)
-    );
+        -- iteration
+             n: in std_logic_vector(2 downto 0);
+        -- inputs
+             i0: in std_logic_vector(3 downto 0);
+             i1: in std_logic_vector(3 downto 0);
+             i2: in std_logic_vector(3 downto 0);
+             i3: in std_logic_vector(3 downto 0);
+        -- outputs
+             o0: out std_logic_vector(3 downto 0); 
+             o1: out std_logic_vector(3 downto 0);
+             o2: out std_logic_vector(3 downto 0);
+             o3: out std_logic_vector(3 downto 0)
+         );
 end entity challenge4;
 
 architecture rtl of challenge4 is
@@ -92,15 +93,15 @@ begin
         i1 <= "0010";
         i2 <= "1000";
         i3 <= "0101";
-        n <= "00";
-        wait for 1 ps;
+        n <= "000";
+        wait for 1 ns;
         assert o0 = "1000";
         assert o1 = "0010";
         assert o2 = "1000";
         assert o3 = "0101";
 
-        n <= "10";
-        wait for 1 ps;
+        n <= "010";
+        wait for 1 ns;
         assert o0 = "0000";
         assert o1 = "0110";
         assert o2 = "0110";
@@ -111,22 +112,22 @@ begin
         i2 <= "1000";
         i3 <= "0100";
 
-        n <= "01";
-        wait for 1 ps;
+        n <= "001";
+        wait for 1 ns;
         assert o0 = "0011";
         assert o1 = "0111";
         assert o2 = "0110";
         assert o3 = "0000";
 
-        n <= "10";
-        wait for 1 ps;
+        n <= "010";
+        wait for 1 ns;
         assert o0 = "0101";
         assert o1 = "0000";
         assert o2 = "0101";
         assert o3 = "0000";
 
-        n <= "11";
-        wait for 1 ps;
+        n <= "011";
+        wait for 1 ns;
         assert o0 = "0000";
         assert o1 = "0000";
         assert o2 = "0000";
