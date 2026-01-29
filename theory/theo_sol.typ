@@ -23,7 +23,7 @@ This statement is equivalent to the statement $S$ = "both knights and knaves can
 
 Assume $S$ is true. Then both knights and knaves could make it. But then we would have knaves making a true statement, which is a contradiction.
 
-Assume $S$ is false. If we assume that knaves can say it, the interpretation appears consistent [this isn't very rigorous].
+Assume $S$ is false. Then knights couldn't say it, and knaves could. No contradiction.
 
 $therefore$ knaves can say the statement (and $S$ is false).
 
@@ -31,11 +31,13 @@ $therefore$ knaves can say the statement (and $S$ is false).
 
 === 2.1 False
 
-$F = K I$.
+$F = K I$ or $F = S K$.
 
 === 2.2 Idiot
 
 $I = S K x$, where $x$ is any arbitrary expression. For example, $S K K$, $S K S$, or $S K (K (S K K))$ are all solutions.
+
+Could also be $F x$ with $F$ from 2.1.
 
 === 2.3 Compose
 
